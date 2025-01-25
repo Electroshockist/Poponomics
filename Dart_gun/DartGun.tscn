@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://cd54jswke45g2"]
+
+[ext_resource type="Script" path="res://Dart_gun/dart_gun.gd" id="1_rcg5u"]
+[ext_resource type="Texture2D" uid="uid://c2wg7ga25w7cm" path="res://Assets/bow.png" id="2_yw1b6"]
+
+[node name="Dart_Gun" type="Node2D"]
+script = ExtResource("1_rcg5u")
+rotation_speed = null
+max_rotation = 65.0
+
+[node name="Gun" type="Sprite2D" parent="."]
+position = Vector2(0, -62)
+scale = Vector2(0.34, 0.34)
+texture = ExtResource("2_yw1b6")

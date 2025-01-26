@@ -10,20 +10,25 @@ config_version=5
 
 [application]
 
-config/name="Global Game Jam-Bubbles"
-run/main_scene="res://Game.tscn"
+config/name="Global Game Jam2025: Bubbles"
+run/main_scene="res://Scenes/Main Menu.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [autoload]
 
 Globals="*res://globals.gd"
+GameManager="*res://game_manager.gd"
 
 [display]
 
 window/size/viewport_width=1280
 window/size/viewport_height=720
 window/stretch/mode="viewport"
+
+[global_group]
+
+Bubbles="List of all bubbles"
 
 [input]
 

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="MarketResource" load_steps=3 format=3 uid="uid://c2gps41kktg5l"]
+
+[ext_resource type="Texture2D" uid="uid://f4ltylwq775o" path="res://Assets/Art/kenney_voxel-pack/PNG/Items/apple.png" id="1_8x5h7"]
+[ext_resource type="Script" path="res://Resources/Scripts/MarketResource.gd" id="2_rnno5"]
+
+[resource]
+script = ExtResource("2_rnno5")
+icon = ExtResource("1_8x5h7")
+quantity = 100
+price = 1

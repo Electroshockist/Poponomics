@@ -1,0 +1,96 @@
+[gd_scene load_steps=3 format=3 uid="uid://dm4w2c85yn5fj"]
+
+[ext_resource type="Texture2D" uid="uid://dnsyfjkts1ojn" path="res://Assets/Art/Menu BGs/How to Play.png" id="1_wg0e2"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_xvkvc"]
+line_spacing = 32.0
+
+[node name="Instructions" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_wg0e2")
+stretch_mode = 6
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 23.0
+grow_horizontal = 2
+label_settings = SubResource("LabelSettings_xvkvc")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -472.0
+offset_top = 88.0
+offset_right = 503.0
+offset_bottom = 638.0
+grow_horizontal = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+bbcode_enabled = true
+text = "[font_size=32][outline_size=7][center][b]How to Play Poponomics[/b][/center][/outline_size][/font_size]
+[outline_size=3][font_size=20][b]Introduction[/b][/font_size]
+Welcome to Poponomics, a game about managing points and controlling the market! Follow these steps to master the game
+
+[font_size=20][b]Game Overview[/b][/font_size]
+[ul]Objective: Buy all the items in the market to become the monopolist and win the game.
+Items in Market: There are 4 items, each starting with a quantity of 100 and a pre-determined price in points.[/ul]
+
+[font_size=20][b]Game Instructions[/b][/font_size]
+[font_size=16][b]Step 1: Playing the Round[/b][/font_size]
+[ol]Control the Bow:
+[ul]Press Left Arrow or Right Arrow to move the bow.
+Press Spacebar to shoot arrows at the bubbles.[/ul]
+Start Shooting Bubbles:
+[ul]Each bubble contains one of the market items.
+Shoot the bubbles to collect points equal to the price of the item inside.[/ul]
+Increase Item Prices:
+[ul]After shooting 5 bubbles of the same item, its price will increase by 1 point because of rising demand.[/ul]
+New Items Added:
+[ul]At the start of every new round, 10 additional units of each item will be added to the market.[/ul]
+Round Duration:
+[ul]Each round lasts 2 minutes, so aim carefully and maximize your points.[/ul][/ol]
+[font_size=16][b]Step 2: Entering the Market[/b][/font_size]
+[ol]After the Round Ends:
+[ul]Use the points you collected to purchase items from the market.
+Prices for items will continue from where the last round ended.[/ul]
+Buy Items:
+[ul]Enter the quantity of each item you want to buy and make a purchase.
+Strategy Tip: Plan purchases carefully to ensure you have enough points to progress.[/ul][/ol]
+[font_size=16][b]Step 3: Winning or Losing[/b][/font_size]
+[ol]Winning the Game:
+[ul]Keep playing rounds and buying items until you purchase all items in the market.
+Achieving this makes you the monopolist, and you win the game![/ul]
+Losing the Game:
+[ul]If you don’t have enough points to buy items after a round, you lose control of the market.
+You’ll need to restart the game.[/ul][/ol]
+
+[font_size=20][b]Key Tips for Success[/b][/font_size]
+[ul]Use the Left Arrow, Right Arrow, and Spacebar efficiently to shoot bubbles quickly.
+Focus on shooting bubbles of high-priced items to earn more points.
+Balance your spending and saving to avoid running out of points.
+Monitor item prices as they rise to plan your next round purchases.[/ul]
+
+Enjoy playing Poponomics and become the ultimate monopolist![/outline_size]"

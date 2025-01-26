@@ -1,14 +1,17 @@
 [gd_scene load_steps=3 format=3 uid="uid://cd54jswke45g2"]
 
 [ext_resource type="Script" path="res://Dart_gun/dart_gun.gd" id="1_rcg5u"]
-[ext_resource type="Texture2D" uid="uid://c2wg7ga25w7cm" path="res://Assets/bow.png" id="2_yw1b6"]
+[ext_resource type="Texture2D" uid="uid://5sdvxnio8lmb" path="res://Assets/Art/kenney_scribble-dungeons/PNG/Double (128px)/Items/weapon_bow_arrow.png" id="2_e2v1s"]
 
 [node name="Dart_Gun" type="Node2D"]
 script = ExtResource("1_rcg5u")
-rotation_speed = null
+rotation_speed = 3.0
 max_rotation = 65.0
 
 [node name="Gun" type="Sprite2D" parent="."]
-position = Vector2(0, -62)
-scale = Vector2(0.34, 0.34)
-texture = ExtResource("2_yw1b6")
+position = Vector2(0, -46)
+texture = ExtResource("2_e2v1s")
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

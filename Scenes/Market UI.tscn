@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://b0gqsddxmj08u"]
+
+[ext_resource type="Script" path="res://market_ui.gd" id="1_2bayx"]
+[ext_resource type="Texture2D" uid="uid://f4ltylwq775o" path="res://Assets/Art/kenney_voxel-pack/PNG/Items/apple.png" id="1_sobch"]
+
+[node name="Market UI" type="HBoxContainer"]
+offset_right = 124.0
+offset_bottom = 23.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_2bayx")
+
+[node name="Icon" type="TextureRect" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("1_sobch")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="Supply" type="Label" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "{Supply}"
+
+[node name="Price" type="Label" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "{Price}"

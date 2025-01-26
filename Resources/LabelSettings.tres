@@ -1,0 +1,8 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://d3b8ptiuciqtj"]
+
+[ext_resource type="FontFile" uid="uid://dxutbanopovip" path="res://Assets/Fonts/baloo/Baloo-Regular.ttf" id="1_h0d3d"]
+
+[resource]
+font = ExtResource("1_h0d3d")
+font_size = 96
+font_color = Color(0.960784, 0.862745, 0.701961, 1)

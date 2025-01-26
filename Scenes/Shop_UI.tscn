@@ -1,0 +1,42 @@
+[gd_scene load_steps=3 format=3 uid="uid://bk78rcp0u368e"]
+
+[ext_resource type="Script" path="res://Scenes/shop_ui.gd" id="2_gbgot"]
+[ext_resource type="Texture2D" uid="uid://f4ltylwq775o" path="res://Assets/Art/kenney_voxel-pack/PNG/Items/apple.png" id="2_ovwlh"]
+
+[node name="Shop UI" type="HBoxContainer"]
+offset_right = 124.0
+offset_bottom = 23.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("2_gbgot")
+
+[node name="Icon" type="TextureRect" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("2_ovwlh")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="Supply" type="Label" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "{Supply}"
+
+[node name="Price" type="Label" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "{Price}"
+
+[node name="VSeparator" type="VSeparator" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="SpinBox" type="SpinBox" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Total" type="Label" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[connection signal="value_changed" from="SpinBox" to="." method="_on_spin_box_value_changed"]

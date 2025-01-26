@@ -1,0 +1,38 @@
+[gd_scene load_steps=4 format=3 uid="uid://dp6b2n8gn8np1"]
+
+[ext_resource type="Texture2D" uid="uid://dr60sarc7phxk" path="res://Assets/Art/Button.png" id="1_mjdj0"]
+[ext_resource type="LabelSettings" uid="uid://d3b8ptiuciqtj" path="res://Resources/LabelSettings.tres" id="2_1dwct"]
+[ext_resource type="Script" path="res://back_button.gd" id="2_kpr1p"]
+
+[node name="Back" type="TextureButton"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 20.0
+texture_normal = ExtResource("1_mjdj0")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("2_kpr1p")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -120.5
+offset_top = -82.5
+offset_right = 120.5
+offset_bottom = 82.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Back"
+label_settings = ExtResource("2_1dwct")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

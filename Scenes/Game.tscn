@@ -17,3 +17,7 @@ min_bubbles = 10
 [node name="Dart_Gun" parent="." instance=ExtResource("3_tbhan")]
 position = Vector2(640, 720)
 max_rotation = 75.0
+
+[node name="Game Timer" type="Timer" parent="."]
+wait_time = 120.0
+autostart = true

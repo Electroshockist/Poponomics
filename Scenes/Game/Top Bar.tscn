@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://bvnffi2oda30p"]
+
+[ext_resource type="PackedScene" uid="uid://bma3kyp3s3f5o" path="res://Scenes/UI/HUD/TImer Display.tscn" id="1_2wic5"]
+[ext_resource type="PackedScene" uid="uid://bkv7dcd7rdmfp" path="res://Scenes/UI/HUD/Points.tscn" id="2_aj0oq"]
+
+[node name="Top Bar" type="Control"]
+layout_mode = 3
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+
+[node name="Time remaining" parent="." instance=ExtResource("1_2wic5")]
+layout_mode = 1
+offset_right = 338.0
+offset_bottom = 51.0
+
+[node name="Points" parent="." instance=ExtResource("2_aj0oq")]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -199.0
+offset_bottom = 51.0
+grow_horizontal = 0

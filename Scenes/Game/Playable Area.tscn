@@ -1,0 +1,43 @@
+[gd_scene load_steps=5 format=3 uid="uid://8j73pio1wtqi"]
+
+[ext_resource type="Script" path="res://Scripts/Game/bubble_spawner.gd" id="1_gf22x"]
+[ext_resource type="PackedScene" uid="uid://buqe7sesqtmvk" path="res://Scenes/Game/Bubble.tscn" id="2_h0jft"]
+[ext_resource type="PackedScene" uid="uid://cd54jswke45g2" path="res://Scenes/Game/Dart_gun/DartGun.tscn" id="3_8gxow"]
+[ext_resource type="PackedScene" uid="uid://bjwlr1aewf03t" path="res://Scenes/Game/Dart_gun/Projectile.tscn" id="4_lehfy"]
+
+[node name="Game Scene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+
+[node name="Bubble_Spawner" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -140.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+script = ExtResource("1_gf22x")
+bubble_scene = ExtResource("2_h0jft")
+max_size = null
+min_size = 100
+max_bubbles = 11
+min_bubbles = 10
+
+[node name="Dart_Gun" parent="." instance=ExtResource("3_8gxow")]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+max_rotation = 75.0
+projectile_scene = ExtResource("4_lehfy")

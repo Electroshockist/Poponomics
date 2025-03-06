@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://cd54jswke45g2"]
+
+[ext_resource type="Script" path="res://Scripts/Game/dart_gun.gd" id="1_73lcl"]
+[ext_resource type="Texture2D" uid="uid://5sdvxnio8lmb" path="res://Assets/Art/kenney_scribble-dungeons/PNG/Double (128px)/Items/weapon_bow_arrow.png" id="2_e2v1s"]
+
+[node name="Dart_Gun" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_73lcl")
+rotation_speed = 3.0
+max_rotation = 65.0
+
+[node name="Gun" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -64.0
+offset_top = -128.0
+offset_right = 64.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("2_e2v1s")
+metadata/_edit_use_anchors_ = true
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

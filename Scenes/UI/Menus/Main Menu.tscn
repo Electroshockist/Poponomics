@@ -1,0 +1,146 @@
+[gd_scene load_steps=7 format=3 uid="uid://ducv6x0s5y333"]
+
+[ext_resource type="Script" path="res://Scripts/UI/main_menu.gd" id="1_j04wt"]
+[ext_resource type="Texture2D" uid="uid://dxlkb3vvew0m6" path="res://Assets/Art/Menu BGs/Home.png" id="1_tvvwy"]
+[ext_resource type="Texture2D" uid="uid://dr60sarc7phxk" path="res://Assets/Art/Button.png" id="2_eduo5"]
+[ext_resource type="FontFile" uid="uid://ch60ip0j3cl2k" path="res://Assets/Fonts/Pacifico/Pacifico-Regular.ttf" id="3_s4q05"]
+[ext_resource type="LabelSettings" uid="uid://d3b8ptiuciqtj" path="res://Resources/LabelSettings.tres" id="5_wdr8e"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_fx8a8"]
+font = ExtResource("3_s4q05")
+font_size = 116
+font_color = Color(0.960784, 0.862745, 0.701961, 1)
+outline_size = 15
+outline_color = Color(0, 0, 0, 1)
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_j04wt")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_tvvwy")
+expand_mode = 1
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -290.0
+offset_top = -40.0
+offset_right = 290.0
+offset_bottom = 172.0
+grow_horizontal = 2
+text = "Poponomics"
+label_settings = SubResource("LabelSettings_fx8a8")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -233.0
+offset_top = -179.0
+offset_right = 233.0
+offset_bottom = 214.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="Play" type="TextureButton" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 20.0
+texture_normal = ExtResource("2_eduo5")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="VBoxContainer/Play"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -120.5
+offset_top = -82.5
+offset_right = 120.5
+offset_bottom = 82.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Play"
+label_settings = ExtResource("5_wdr8e")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Instructions" type="TextureButton" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 20.0
+texture_normal = ExtResource("2_eduo5")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="VBoxContainer/Instructions"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -210.0
+offset_top = -82.5
+offset_right = 210.0
+offset_bottom = 82.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Instructions"
+label_settings = ExtResource("5_wdr8e")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Credits" type="TextureButton" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 20.0
+texture_normal = ExtResource("2_eduo5")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="VBoxContainer/Credits"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -122.5
+offset_top = -82.5
+offset_right = 122.5
+offset_bottom = 82.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Credits"
+label_settings = ExtResource("5_wdr8e")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/Instructions" to="." method="_on_instructions_pressed"]
+[connection signal="pressed" from="VBoxContainer/Credits" to="." method="_on_credits_pressed"]

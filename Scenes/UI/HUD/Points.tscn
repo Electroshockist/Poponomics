@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://bkv7dcd7rdmfp"]
+
+[ext_resource type="LabelSettings" uid="uid://erayclptbayt" path="res://Resources/SmallText.tres" id="1_tgacm"]
+[ext_resource type="Script" path="res://Scripts/UI/points_value.gd" id="2_157q2"]
+
+[node name="Points" type="HBoxContainer"]
+size_flags_horizontal = 8
+size_flags_vertical = 0
+
+[node name="Points" type="Label" parent="."]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+text = "Points:"
+label_settings = ExtResource("1_tgacm")
+
+[node name="Points Value" type="Label" parent="."]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+text = "{0 pts}"
+label_settings = ExtResource("1_tgacm")
+script = ExtResource("2_157q2")

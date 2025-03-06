@@ -10,17 +10,17 @@ config_version=5
 
 [application]
 
-config/name="Global Game Jam2025: Bubbles"
+config/name="Poponomics"
 config/tags=PackedStringArray("game_jams")
-run/main_scene="res://Scenes/Menus/Main Menu.tscn"
+run/main_scene="res://Scenes/UI/Menus/Main Menu.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [autoload]
 
-Globals="*res://globals.gd"
-GameManager="*res://game_manager.gd"
-MenuManager="*res://menu_manager.gd"
+Globals="*res://Scripts/globals.gd"
+GameManager="*res://Scripts/game_manager.gd"
+MenuManager="*res://Scripts/menu_manager.gd"
 
 [display]
 

@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://bjwlr1aewf03t"]
+
+[ext_resource type="Script" path="res://Scripts/Game/projectile.gd" id="1_o4ht4"]
+[ext_resource type="Texture2D" uid="uid://h2yph87pge76" path="res://Assets/Art/kenney_scribble-dungeons/PNG/Double (128px)/Items/weapon_pole.png" id="2_18e15"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gsex2"]
+size = Vector2(34, 129)
+
+[node name="Projectile" type="RigidBody2D"]
+collision_mask = 0
+gravity_scale = 0.0
+script = ExtResource("1_o4ht4")
+speed = 15.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -64.5)
+shape = SubResource("RectangleShape2D_gsex2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_18e15")
+offset = Vector2(0, -64)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(-1.43051e-06, -64.5)
+scale = Vector2(1.7, 6.45)
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_screen_exited"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bompuo7v3onx4"]
+[gd_scene load_steps=10 format=3 uid="uid://bompuo7v3onx4"]
 
 [ext_resource type="Script" path="res://Scripts/UI/shop.gd" id="1_lmqty"]
 [ext_resource type="Texture2D" uid="uid://cgk3q5awh78m3" path="res://Assets/Art/Menu BGs/Market.png" id="1_tiqwh"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bk78rcp0u368e" path="res://Scenes/UI/Shop_UI.tscn" id="3_8acf6"]
 [ext_resource type="PackedScene" uid="uid://bkv7dcd7rdmfp" path="res://Scenes/UI/HUD/Points.tscn" id="3_mll3b"]
 [ext_resource type="Texture2D" uid="uid://dr60sarc7phxk" path="res://Assets/Art/Button.png" id="5_afw3n"]
+[ext_resource type="Script" path="res://Scripts/UI/total.gd" id="6_dvb3k"]
 [ext_resource type="LabelSettings" uid="uid://d3b8ptiuciqtj" path="res://Resources/LabelSettings.tres" id="6_virxc"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_aqmc6"]
@@ -104,6 +105,27 @@ shop = NodePath("../../..")
 layout_mode = 2
 market = 3
 shop = NodePath("../../..")
+
+[node name="Total" type="HBoxContainer" parent="MarginContainer/List"]
+layout_mode = 2
+size_flags_vertical = 8
+script = ExtResource("6_dvb3k")
+
+[node name="Total" type="Label" parent="MarginContainer/List/Total"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Total
+"
+
+[node name="Supply" type="Label" parent="MarginContainer/List/Total"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "{Supply}"
+
+[node name="Price per Unit" type="Label" parent="MarginContainer/List/Total"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "{Price}"
 
 [node name="Buy" type="TextureButton" parent="."]
 layout_mode = 2

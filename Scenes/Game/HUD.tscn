@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://3cy2ti1rnnbf"]
 
-[ext_resource type="PackedScene" uid="uid://dak7pxrmbfbs2" path="res://Scenes/UI/HUD/Market List UI.tscn" id="1_syik6"]
+[ext_resource type="PackedScene" uid="uid://dak7pxrmbfbs2" path="res://Scenes/UI/HUD/Market List HUD.tscn" id="1_syik6"]
 [ext_resource type="PackedScene" uid="uid://bvnffi2oda30p" path="res://Scenes/Game/Top Bar.tscn" id="2_ugd8i"]
 
 [node name="HUD" type="Control"]

@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bvnffi2oda30p" path="res://Scenes/Game/Top Bar.tscn" id="2_ktlii"]
 [ext_resource type="PackedScene" uid="uid://8j73pio1wtqi" path="res://Scenes/Game/Playable Area.tscn" id="2_vs65c"]
-[ext_resource type="PackedScene" uid="uid://dak7pxrmbfbs2" path="res://Scenes/UI/HUD/Market List UI.tscn" id="3_qtt8p"]
+[ext_resource type="PackedScene" uid="uid://dak7pxrmbfbs2" path="res://Scenes/UI/HUD/Market List HUD.tscn" id="3_qtt8p"]
 
 [node name="Game" type="MarginContainer"]
 anchors_preset = 15

@@ -1,4 +1,4 @@
-extends Node2D
+extends Area2D
 
 class_name Bubble
 
@@ -28,20 +28,11 @@ var market: GameManager.MARKETS:
 		market = value
 		$MarketSprite2D.texture = GameManager.market_resources[market].icon
 
+var _spawn_attempts := 100
+
 func _ready():
+	randomize_properties()
 	bubble_popped.connect(GameManager.on_bubble_popped)
-	radius = randi_range(bubble_spawner.min_size, bubble_spawner.max_size)
-
-
-	market = randi_range(0, 3) as GameManager.MARKETS
-
-	var spawn_dims: Rect2i = Rect2i(bubble_spawner.position, bubble_spawner.size)
-
-	# Set global position to random num between play area dimensions, with a margin of bubble radius
-	global_position = Vector2(
-		randi_range(spawn_dims.position.x + radius, spawn_dims.position.x + spawn_dims.size.x - radius),
-		randi_range(spawn_dims.position.y + radius, spawn_dims.position.y + spawn_dims.size.y - radius)
-	)
 
 func _on_body_entered(body: Node2D) -> void:
 	if body is Projectile:
@@ -49,3 +40,31 @@ func _on_body_entered(body: Node2D) -> void:
 
 		body.queue_free()
 		queue_free()
+
+func randomize_properties():
+	radius = randi_range(bubble_spawner.min_size, bubble_spawner.max_size)
+	market = randi_range(0, 3) as GameManager.MARKETS
+
+	var spawn_dims: Rect2i = Rect2i(bubble_spawner.position, bubble_spawner.size)
+	print(spawn_dims)
+	# Set global position to random num between play area dimensions, with a margin of bubble radius
+	global_position = Vector2(
+		randi_range(spawn_dims.position.x + radius, spawn_dims.position.x + spawn_dims.size.x - radius),
+		randi_range(spawn_dims.position.y + radius, spawn_dims.position.y + spawn_dims.size.y - radius)
+	)
+
+	var bubbles := get_tree().get_nodes_in_group("Bubbles")
+	for s in _spawn_attempts:
+		for b in bubbles:
+			if _intersects(self, b):
+				_spawn_attempts -= 1
+				randomize_properties()
+
+	if not _spawn_attempts >= 0:
+		queue_free()
+
+func _intersects(bubble1: Bubble, bubble2: Bubble) -> bool:
+	if not bubble2 == bubble1:
+		var radii_sum_sq = (bubble1.radius + bubble2.radius) * (bubble1.radius + bubble2.radius)
+		return bubble1.global_position.distance_squared_to(bubble2.global_position) < radii_sum_sq
+	return false

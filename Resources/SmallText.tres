@@ -6,3 +6,5 @@
 font = ExtResource("1_mpkto")
 font_size = 32
 font_color = Color(0.960784, 0.862745, 0.701961, 1)
+outline_size = 12
+outline_color = Color(0.118581, 0.118581, 0.118581, 1)

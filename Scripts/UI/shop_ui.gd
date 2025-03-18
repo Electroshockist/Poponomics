@@ -11,7 +11,7 @@ class_name Shop_UI
 const price_string = "{price} pts"
 
 func _ready():
-	spinbox.max_value = market_resource.get_max_affordable(shop.remaining_buget)
+	spinbox.max_value = market_resource.get_max_affordable(GameManager.points)
     
 	$Icon.texture = market_resource.icon
 	GameManager.market_updated.connect(market_changed)
@@ -26,4 +26,4 @@ func market_changed(m: GameManager.MARKETS):
 
 
 func _on_spin_box_value_changed(value: float) -> void:
-	$Total.text = price_string % (value * market_resource.price)
+	$Total.text = price_string.format({"price": value * market_resource.price})

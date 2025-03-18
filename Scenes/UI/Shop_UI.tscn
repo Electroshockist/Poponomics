@@ -29,7 +29,6 @@ text = "{Price}"
 
 [node name="VSeparator" type="VSeparator" parent="."]
 layout_mode = 2
-size_flags_horizontal = 3
 
 [node name="SpinBox" type="SpinBox" parent="."]
 layout_mode = 2

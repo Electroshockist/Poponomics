@@ -1,7 +1,7 @@
 extends Node
 
 const round_cap := 2
-const round_time_sec := 120
+const round_time_sec := 10 # 120
 
 const points_text = "{points} pts"
 
@@ -21,7 +21,7 @@ var market_resources = {
 
 signal points_updated
 signal market_updated(market: MARKETS)
-signal totals_updated
+signal totals_updated()
 signal round_ended
 
 @onready var timer: Timer = Timer.new()
@@ -68,7 +68,7 @@ func end_round():
 	# can buy from market?
 	var sum = 0
 	for i in market_resources:
-		sum += market_resources[i].get_max_buyable()
+		sum += market_resources[i].get_max_affordable(points)
 
 	# lose if can't buy from market
 	if loose or sum <= 0:

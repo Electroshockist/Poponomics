@@ -1,18 +1,13 @@
-[gd_scene load_steps=10 format=3 uid="uid://bompuo7v3onx4"]
+[gd_scene load_steps=9 format=3 uid="uid://bompuo7v3onx4"]
 
 [ext_resource type="Script" path="res://Scripts/UI/shop.gd" id="1_lmqty"]
 [ext_resource type="Texture2D" uid="uid://cgk3q5awh78m3" path="res://Assets/Art/Menu BGs/Market.png" id="1_tiqwh"]
-[ext_resource type="FontFile" uid="uid://dxutbanopovip" path="res://Assets/Fonts/baloo/Baloo-Regular.ttf" id="2_2qjv0"]
 [ext_resource type="PackedScene" uid="uid://bk78rcp0u368e" path="res://Scenes/UI/Shop_UI.tscn" id="3_8acf6"]
 [ext_resource type="PackedScene" uid="uid://bkv7dcd7rdmfp" path="res://Scenes/UI/HUD/Points.tscn" id="3_mll3b"]
+[ext_resource type="LabelSettings" uid="uid://erayclptbayt" path="res://Resources/SmallText.tres" id="3_q1a1w"]
 [ext_resource type="Texture2D" uid="uid://dr60sarc7phxk" path="res://Assets/Art/Button.png" id="5_afw3n"]
 [ext_resource type="Script" path="res://Scripts/UI/total.gd" id="6_dvb3k"]
 [ext_resource type="LabelSettings" uid="uid://d3b8ptiuciqtj" path="res://Resources/LabelSettings.tres" id="6_virxc"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_aqmc6"]
-font = ExtResource("2_2qjv0")
-font_size = 32
-font_color = Color(0.960784, 0.862745, 0.701961, 1)
 
 [node name="Shop" type="Control"]
 layout_mode = 3
@@ -49,7 +44,7 @@ grow_vertical = 2
 layout_mode = 2
 size_flags_vertical = 0
 text = "Buy items to reduce their stock!"
-label_settings = SubResource("LabelSettings_aqmc6")
+label_settings = ExtResource("3_q1a1w")
 
 [node name="Points" parent="MarginContainer" instance=ExtResource("3_mll3b")]
 layout_mode = 2
@@ -75,6 +70,10 @@ text = "Supply"
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Price per Unit"
+
+[node name="Control" type="Control" parent="MarginContainer/List/Header"]
+layout_mode = 2
+size_flags_horizontal = 3
 
 [node name="Buy" type="Label" parent="MarginContainer/List/Header"]
 layout_mode = 2
@@ -106,10 +105,12 @@ layout_mode = 2
 market = 3
 shop = NodePath("../../..")
 
-[node name="Total" type="HBoxContainer" parent="MarginContainer/List"]
+[node name="Total" type="HBoxContainer" parent="MarginContainer/List" node_paths=PackedStringArray("price", "quantity")]
 layout_mode = 2
 size_flags_vertical = 8
 script = ExtResource("6_dvb3k")
+price = NodePath("Total Cost")
+quantity = NodePath("MarginContainer/Supply")
 
 [node name="Total" type="Label" parent="MarginContainer/List/Total"]
 layout_mode = 2
@@ -117,12 +118,28 @@ size_flags_horizontal = 3
 text = "Total
 "
 
-[node name="Supply" type="Label" parent="MarginContainer/List/Total"]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/List/Total"]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_constants/margin_left = 37
+
+[node name="Supply" type="Label" parent="MarginContainer/List/Total/MarginContainer"]
+layout_mode = 2
 text = "{Supply}"
 
-[node name="Price per Unit" type="Label" parent="MarginContainer/List/Total"]
+[node name="Control" type="Control" parent="MarginContainer/List/Total"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Control2" type="Control" parent="MarginContainer/List/Total"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Control3" type="Control" parent="MarginContainer/List/Total"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Total Cost" type="Label" parent="MarginContainer/List/Total"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "{Price}"

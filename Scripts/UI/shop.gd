@@ -6,6 +6,11 @@ class_name Shop
 
 @onready var remaining_buget := GameManager.points
 
+@export var _total_cost_label: Label
+
+func _ready():
+    GameManager.totals_updated.connect(_on_totals_updated)
+
 func _on_buy_pressed() -> void:
     var sum = 0
     for shop_path in shops:
@@ -25,3 +30,6 @@ func _on_buy_pressed() -> void:
         return
     MenuManager.load_scene(MenuManager.SCENE.GAME)
     GameManager.round_started()
+
+func _on_totals_updated():
+    remaining_buget = GameManager.points - int(_total_cost_label.text)

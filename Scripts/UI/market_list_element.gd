@@ -9,12 +9,12 @@ class_name MarketListElement
 const price_string = "{price} pts"
 
 func _ready():
-    $Icon.texture = market_resource.icon
-    GameManager.market_updated.connect(_on_market_updated)
-    _on_market_updated(market)
+	$Icon.texture = market_resource.icon
+	GameManager.market_updated.connect(_on_market_updated)
+	_on_market_updated(market)
 
 func _on_market_updated(m: GameManager.MARKETS):
-    if m == market:
-        $Supply.text = "%s" % market_resource.quantity
-        $Price.text = price_string.format({"price": market_resource.price})
-        GameManager.totals_updated.emit()
+	if m == market:
+		$Supply.text = "%s" % market_resource.quantity
+		$Price.text = price_string.format({"price": market_resource.price})
+		GameManager.totals_updated.emit()

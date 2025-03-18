@@ -46,7 +46,6 @@ func randomize_properties():
 	market = randi_range(0, 3) as GameManager.MARKETS
 
 	var spawn_dims: Rect2i = Rect2i(bubble_spawner.position, bubble_spawner.size)
-	print(spawn_dims)
 	# Set global position to random num between play area dimensions, with a margin of bubble radius
 	global_position = Vector2(
 		randi_range(spawn_dims.position.x + radius, spawn_dims.position.x + spawn_dims.size.x - radius),

@@ -1,10 +1,10 @@
 [gd_scene load_steps=4 format=3 uid="uid://dp6b2n8gn8np1"]
 
-[ext_resource type="Texture2D" uid="uid://dr60sarc7phxk" path="res://Assets/Art/Button.png" id="1_mjdj0"]
 [ext_resource type="LabelSettings" uid="uid://d3b8ptiuciqtj" path="res://Resources/LabelSettings.tres" id="2_1dwct"]
 [ext_resource type="Script" path="res://Scripts/UI/back_button.gd" id="2_kpr1p"]
+[ext_resource type="Texture2D" uid="uid://d28qqbsva80lk" path="res://Assets/Art/kenney_ui-pack/PNG/Green/Double/button_rectangle_depth_gradient.png" id="4_nafik"]
 
-[node name="Back" type="TextureButton"]
+[node name="Back" type="Button"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -12,10 +12,20 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 20.0
-texture_normal = ExtResource("1_mjdj0")
-ignore_texture_size = true
-stretch_mode = 0
 script = ExtResource("2_kpr1p")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_nafik")
+patch_margin_left = 15
+patch_margin_top = 15
+patch_margin_right = 15
+patch_margin_bottom = 20
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1

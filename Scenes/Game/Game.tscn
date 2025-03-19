@@ -1,42 +1,61 @@
-[gd_scene load_steps=4 format=3 uid="uid://c2w6oc8gbdgvj"]
+[gd_scene load_steps=5 format=3 uid="uid://c2w6oc8gbdgvj"]
 
+[ext_resource type="Texture2D" uid="uid://x6kplbi873sa" path="res://Assets/Art/Free-Horizontal-Game-Backgrounds/PNG/game_background_1/game_background_1.png" id="1_bl4he"]
 [ext_resource type="PackedScene" uid="uid://bvnffi2oda30p" path="res://Scenes/Game/Top Bar.tscn" id="2_ktlii"]
 [ext_resource type="PackedScene" uid="uid://8j73pio1wtqi" path="res://Scenes/Game/Playable Area.tscn" id="2_vs65c"]
 [ext_resource type="PackedScene" uid="uid://dak7pxrmbfbs2" path="res://Scenes/UI/HUD/Market List HUD.tscn" id="3_qtt8p"]
 
-[node name="Game" type="MarginContainer"]
+[node name="Game" type="Control"]
+layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 10
-theme_override_constants/margin_top = 10
-theme_override_constants/margin_right = 10
 
-[node name="Container" type="VBoxContainer" parent="."]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="Top Bar" parent="Container" instance=ExtResource("2_ktlii")]
-custom_minimum_size = Vector2(0, 45)
-layout_mode = 2
-
-[node name="HBoxContainer" type="HBoxContainer" parent="Container"]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="Playable Area" parent="Container/HBoxContainer" instance=ExtResource("2_vs65c")]
-layout_mode = 2
-
-[node name="Control" type="Control" parent="Container/HBoxContainer"]
-custom_minimum_size = Vector2(318, 0)
-layout_mode = 2
-
-[node name="List" parent="Container/HBoxContainer/Control" instance=ExtResource("3_qtt8p")]
+[node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
-offset_bottom = -246.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_bl4he")
+expand_mode = 1
 
 [node name="Game Timer" type="Timer" parent="."]
 wait_time = 120.0
 autostart = true
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 1270.0
+offset_bottom = 720.0
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+
+[node name="Container" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Top Bar" parent="MarginContainer/Container" instance=ExtResource("2_ktlii")]
+custom_minimum_size = Vector2(0, 45)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/Container"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Playable Area" parent="MarginContainer/Container/HBoxContainer" instance=ExtResource("2_vs65c")]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="MarginContainer/Container/HBoxContainer"]
+custom_minimum_size = Vector2(318, 0)
+layout_mode = 2
+
+[node name="List" parent="MarginContainer/Container/HBoxContainer/Control" instance=ExtResource("3_qtt8p")]
+layout_mode = 1
+offset_bottom = -246.0

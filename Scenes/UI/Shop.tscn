@@ -1,13 +1,13 @@
 [gd_scene load_steps=9 format=3 uid="uid://bompuo7v3onx4"]
 
 [ext_resource type="Script" path="res://Scripts/UI/shop.gd" id="1_lmqty"]
-[ext_resource type="Texture2D" uid="uid://cgk3q5awh78m3" path="res://Assets/Art/Menu BGs/Market.png" id="1_tiqwh"]
+[ext_resource type="Texture2D" uid="uid://bwg0htvh3elt0" path="res://Assets/Art/Free-Horizontal-Game-Backgrounds/PNG/game_background_4/game_background_4.png" id="2_kpmof"]
 [ext_resource type="PackedScene" uid="uid://bk78rcp0u368e" path="res://Scenes/UI/Shop_UI.tscn" id="3_8acf6"]
 [ext_resource type="PackedScene" uid="uid://bkv7dcd7rdmfp" path="res://Scenes/UI/HUD/Points.tscn" id="3_mll3b"]
 [ext_resource type="LabelSettings" uid="uid://erayclptbayt" path="res://Resources/SmallText.tres" id="3_q1a1w"]
-[ext_resource type="Texture2D" uid="uid://dr60sarc7phxk" path="res://Assets/Art/Button.png" id="5_afw3n"]
 [ext_resource type="Script" path="res://Scripts/UI/total.gd" id="6_dvb3k"]
 [ext_resource type="LabelSettings" uid="uid://d3b8ptiuciqtj" path="res://Resources/LabelSettings.tres" id="6_virxc"]
+[ext_resource type="Texture2D" uid="uid://d28qqbsva80lk" path="res://Assets/Art/kenney_ui-pack/PNG/Green/Double/button_rectangle_depth_gradient.png" id="8_y0g0n"]
 
 [node name="Shop" type="Control" node_paths=PackedStringArray("price", "supply")]
 layout_mode = 3
@@ -28,7 +28,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_tiqwh")
+texture = ExtResource("2_kpmof")
+expand_mode = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -136,7 +137,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 text = "{Total}"
 
-[node name="Buy" type="TextureButton" parent="."]
+[node name="Buy" type="Button" parent="."]
 layout_mode = 2
 offset_left = 478.0
 offset_top = 577.0
@@ -144,9 +145,19 @@ offset_right = 801.0
 offset_bottom = 695.0
 size_flags_vertical = 3
 size_flags_stretch_ratio = 20.0
-texture_normal = ExtResource("5_afw3n")
-ignore_texture_size = true
-stretch_mode = 0
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Buy"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_y0g0n")
+patch_margin_left = 15
+patch_margin_top = 15
+patch_margin_right = 15
+patch_margin_bottom = 20
 
 [node name="Label" type="Label" parent="Buy"]
 layout_mode = 1

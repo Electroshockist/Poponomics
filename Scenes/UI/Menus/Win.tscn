@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://c4msqpmg8bx01"]
 
 [ext_resource type="PackedScene" uid="uid://ckpd0jsxoybsu" path="res://Scenes/UI/Menus/Lose.tscn" id="1_binun"]
-[ext_resource type="Texture2D" uid="uid://cocong8g4hnp6" path="res://Assets/Art/Menu BGs/Congratulations.png" id="2_3qsce"]
 [ext_resource type="FontFile" uid="uid://ch60ip0j3cl2k" path="res://Assets/Fonts/Pacifico/Pacifico-Regular.ttf" id="2_86nhq"]
+[ext_resource type="Texture2D" uid="uid://dq5gcqtyhu4pg" path="res://Assets/Art/Free-Horizontal-Game-Backgrounds/PNG/game_background_2/game_background_2.png" id="2_afgh3"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_s8wmy"]
 font = ExtResource("2_86nhq")
@@ -14,7 +14,7 @@ outline_color = Color(0.395067, 0.4, 0.104, 1)
 [node name="Lose" instance=ExtResource("1_binun")]
 
 [node name="TextureRect" parent="." index="0"]
-texture = ExtResource("2_3qsce")
+texture = ExtResource("2_afgh3")
 
 [node name="Label" parent="." index="1"]
 text = "You Won!"

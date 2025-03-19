@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dm4w2c85yn5fj"]
 
-[ext_resource type="Texture2D" uid="uid://dnsyfjkts1ojn" path="res://Assets/Art/Menu BGs/How to Play.png" id="1_jmlkv"]
+[ext_resource type="Texture2D" uid="uid://bwg0htvh3elt0" path="res://Assets/Art/Free-Horizontal-Game-Backgrounds/PNG/game_background_4/game_background_4.png" id="1_kgosf"]
 [ext_resource type="PackedScene" uid="uid://dp6b2n8gn8np1" path="res://Scenes/UI/Back Button.tscn" id="2_jtqb0"]
 [ext_resource type="PackedScene" uid="uid://ducv6x0s5y333" path="res://Scenes/UI/Menus/Main Menu.tscn" id="3_n5jf0"]
 
@@ -22,7 +22,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_jmlkv")
+texture = ExtResource("1_kgosf")
+expand_mode = 1
 stretch_mode = 6
 
 [node name="Label" type="Label" parent="."]

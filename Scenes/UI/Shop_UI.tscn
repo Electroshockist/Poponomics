@@ -37,5 +37,6 @@ size_flags_horizontal = 3
 [node name="Total" type="Label" parent="."]
 layout_mode = 2
 size_flags_horizontal = 3
+text = "{Subtotal}"
 
 [connection signal="value_changed" from="SpinBox" to="." method="_on_spin_box_value_changed"]

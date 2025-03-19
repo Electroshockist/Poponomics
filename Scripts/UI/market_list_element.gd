@@ -17,4 +17,3 @@ func _on_market_updated(m: GameManager.MARKETS):
 	if m == market:
 		$Supply.text = "%s" % market_resource.quantity
 		$Price.text = price_string.format({"price": market_resource.price})
-		GameManager.totals_updated.emit()

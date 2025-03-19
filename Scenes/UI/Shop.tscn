@@ -9,7 +9,7 @@
 [ext_resource type="Script" path="res://Scripts/UI/total.gd" id="6_dvb3k"]
 [ext_resource type="LabelSettings" uid="uid://d3b8ptiuciqtj" path="res://Resources/LabelSettings.tres" id="6_virxc"]
 
-[node name="Shop" type="Control"]
+[node name="Shop" type="Control" node_paths=PackedStringArray("price", "supply")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -17,7 +17,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_lmqty")
-shops = [NodePath("MarginContainer/List/Apple Shop UI"), NodePath("MarginContainer/List/Fish Shop UI"), NodePath("MarginContainer/List/Stew Shop UI"), NodePath("MarginContainer/List/Wheat Shop UI")]
+price = NodePath("MarginContainer/List/Total/Total Cost")
+supply = NodePath("MarginContainer/List/Total/Supply")
+shop_paths = [NodePath("MarginContainer/List/Apple Shop UI"), NodePath("MarginContainer/List/Fish Shop UI"), NodePath("MarginContainer/List/Stew Shop UI"), NodePath("MarginContainer/List/Wheat Shop UI")]
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
@@ -64,7 +66,7 @@ text = "Icon"
 [node name="Supply" type="Label" parent="MarginContainer/List/Header"]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "Supply"
+text = "Supply Remaining"
 
 [node name="Price per Unit" type="Label" parent="MarginContainer/List/Header"]
 layout_mode = 2
@@ -105,12 +107,10 @@ layout_mode = 2
 market = 3
 shop = NodePath("../../..")
 
-[node name="Total" type="HBoxContainer" parent="MarginContainer/List" node_paths=PackedStringArray("price", "quantity")]
+[node name="Total" type="HBoxContainer" parent="MarginContainer/List"]
 layout_mode = 2
 size_flags_vertical = 8
 script = ExtResource("6_dvb3k")
-price = NodePath("Total Cost")
-quantity = NodePath("MarginContainer/Supply")
 
 [node name="Total" type="Label" parent="MarginContainer/List/Total"]
 layout_mode = 2
@@ -118,13 +118,9 @@ size_flags_horizontal = 3
 text = "Total
 "
 
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/List/Total"]
+[node name="Supply" type="Label" parent="MarginContainer/List/Total"]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_constants/margin_left = 37
-
-[node name="Supply" type="Label" parent="MarginContainer/List/Total/MarginContainer"]
-layout_mode = 2
 text = "{Supply}"
 
 [node name="Control" type="Control" parent="MarginContainer/List/Total"]
@@ -135,14 +131,10 @@ size_flags_horizontal = 3
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Control3" type="Control" parent="MarginContainer/List/Total"]
-layout_mode = 2
-size_flags_horizontal = 3
-
 [node name="Total Cost" type="Label" parent="MarginContainer/List/Total"]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "{Price}"
+text = "{Total}"
 
 [node name="Buy" type="TextureButton" parent="."]
 layout_mode = 2

@@ -3,7 +3,7 @@ extends Node
 const round_cap := 2
 const round_time_sec := 10 # 120
 
-const points_text = "{points} pts"
+const price_string = "{price} pts"
 
 enum MARKETS {
 	APPLE,
@@ -21,7 +21,7 @@ var market_resources = {
 
 signal points_updated
 signal market_updated(market: MARKETS)
-signal totals_updated()
+signal cart_updated
 signal round_ended
 
 @onready var timer: Timer = Timer.new()
@@ -76,7 +76,6 @@ func end_round():
 		return
 
 	round_ended.emit()
-
 
 func _on_round_end():
 	MenuManager.load_scene(MenuManager.SCENE.SHOP)

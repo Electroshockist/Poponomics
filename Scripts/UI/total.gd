@@ -1,1 +1,1 @@
-extends HBoxContainer
+extends Node

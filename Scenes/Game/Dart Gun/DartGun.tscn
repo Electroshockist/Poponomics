@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cd54jswke45g2"]
 
-[ext_resource type="Script" path="res://Scripts/Game/dart_gun.gd" id="1_73lcl"]
+[ext_resource type="Script" uid="uid://ouwfvu0xv84b" path="res://Scripts/Game/dart_gun.gd" id="1_73lcl"]
 [ext_resource type="Texture2D" uid="uid://5sdvxnio8lmb" path="res://Assets/Art/kenney_scribble-dungeons/PNG/Double (128px)/Items/weapon_bow_arrow.png" id="2_e2v1s"]
 
 [node name="Dart_Gun" type="Control"]

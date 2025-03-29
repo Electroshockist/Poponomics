@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dp6b2n8gn8np1"]
 
 [ext_resource type="LabelSettings" uid="uid://d3b8ptiuciqtj" path="res://Resources/LabelSettings.tres" id="2_1dwct"]
-[ext_resource type="Script" path="res://Scripts/UI/back_button.gd" id="2_kpr1p"]
+[ext_resource type="Script" uid="uid://bdf1k3v0x7suc" path="res://Scripts/UI/back_button.gd" id="2_kpr1p"]
 [ext_resource type="Texture2D" uid="uid://d28qqbsva80lk" path="res://Assets/Art/kenney_ui-pack/PNG/Green/Double/button_rectangle_depth_gradient.png" id="4_nafik"]
 
 [node name="Back" type="Button"]

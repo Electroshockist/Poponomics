@@ -1,15 +1,15 @@
 [gd_scene load_steps=9 format=3 uid="uid://bompuo7v3onx4"]
 
-[ext_resource type="Script" path="res://Scripts/UI/shop.gd" id="1_lmqty"]
+[ext_resource type="Script" uid="uid://0d8iv6njsr65" path="res://Scripts/UI/shop.gd" id="1_lmqty"]
 [ext_resource type="Texture2D" uid="uid://bwg0htvh3elt0" path="res://Assets/Art/Free-Horizontal-Game-Backgrounds/PNG/game_background_4/game_background_4.png" id="2_kpmof"]
 [ext_resource type="PackedScene" uid="uid://bk78rcp0u368e" path="res://Scenes/UI/Shop_UI.tscn" id="3_8acf6"]
 [ext_resource type="PackedScene" uid="uid://bkv7dcd7rdmfp" path="res://Scenes/UI/HUD/Points.tscn" id="3_mll3b"]
 [ext_resource type="LabelSettings" uid="uid://erayclptbayt" path="res://Resources/SmallText.tres" id="3_q1a1w"]
-[ext_resource type="Script" path="res://Scripts/UI/total.gd" id="6_dvb3k"]
+[ext_resource type="Script" uid="uid://35ljik181mpk" path="res://Scripts/UI/total.gd" id="6_dvb3k"]
 [ext_resource type="LabelSettings" uid="uid://d3b8ptiuciqtj" path="res://Resources/LabelSettings.tres" id="6_virxc"]
 [ext_resource type="Texture2D" uid="uid://d28qqbsva80lk" path="res://Assets/Art/kenney_ui-pack/PNG/Green/Double/button_rectangle_depth_gradient.png" id="8_y0g0n"]
 
-[node name="Shop" type="Control" node_paths=PackedStringArray("price", "supply")]
+[node name="Shop" type="Control" node_paths=PackedStringArray("shops")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -17,9 +17,12 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_lmqty")
-price = NodePath("MarginContainer/List/Total/Total Cost")
-supply = NodePath("MarginContainer/List/Total/Supply")
-shop_paths = [NodePath("MarginContainer/List/Apple Shop UI"), NodePath("MarginContainer/List/Fish Shop UI"), NodePath("MarginContainer/List/Stew Shop UI"), NodePath("MarginContainer/List/Wheat Shop UI")]
+shops = {
+0: NodePath("MarginContainer/List/Apple Shop UI"),
+1: NodePath("MarginContainer/List/Fish Shop UI"),
+2: NodePath("MarginContainer/List/Stew Shop UI"),
+3: NodePath("MarginContainer/List/Wheat Shop UI")
+}
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
@@ -89,24 +92,20 @@ layout_mode = 2
 size_flags_horizontal = 3
 text = "Total Cost"
 
-[node name="Apple Shop UI" parent="MarginContainer/List" node_paths=PackedStringArray("shop") instance=ExtResource("3_8acf6")]
+[node name="Apple Shop UI" parent="MarginContainer/List" instance=ExtResource("3_8acf6")]
 layout_mode = 2
-shop = NodePath("../../..")
 
-[node name="Fish Shop UI" parent="MarginContainer/List" node_paths=PackedStringArray("shop") instance=ExtResource("3_8acf6")]
+[node name="Fish Shop UI" parent="MarginContainer/List" instance=ExtResource("3_8acf6")]
 layout_mode = 2
 market = 1
-shop = NodePath("../../..")
 
-[node name="Stew Shop UI" parent="MarginContainer/List" node_paths=PackedStringArray("shop") instance=ExtResource("3_8acf6")]
+[node name="Stew Shop UI" parent="MarginContainer/List" instance=ExtResource("3_8acf6")]
 layout_mode = 2
 market = 2
-shop = NodePath("../../..")
 
-[node name="Wheat Shop UI" parent="MarginContainer/List" node_paths=PackedStringArray("shop") instance=ExtResource("3_8acf6")]
+[node name="Wheat Shop UI" parent="MarginContainer/List" instance=ExtResource("3_8acf6")]
 layout_mode = 2
 market = 3
-shop = NodePath("../../..")
 
 [node name="Total" type="HBoxContainer" parent="MarginContainer/List"]
 layout_mode = 2
@@ -177,4 +176,8 @@ label_settings = ExtResource("6_virxc")
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[connection signal="spinbox_updated" from="MarginContainer/List/Apple Shop UI" to="." method="_on_shop_ui_spinbox_updated"]
+[connection signal="spinbox_updated" from="MarginContainer/List/Fish Shop UI" to="." method="_on_shop_ui_spinbox_updated"]
+[connection signal="spinbox_updated" from="MarginContainer/List/Stew Shop UI" to="." method="_on_shop_ui_spinbox_updated"]
+[connection signal="spinbox_updated" from="MarginContainer/List/Wheat Shop UI" to="." method="_on_shop_ui_spinbox_updated"]
 [connection signal="pressed" from="Buy" to="." method="_on_buy_pressed"]

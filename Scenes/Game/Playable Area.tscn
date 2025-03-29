@@ -1,10 +1,10 @@
 [gd_scene load_steps=7 format=3 uid="uid://8j73pio1wtqi"]
 
-[ext_resource type="Script" path="res://Scripts/Game/bubble_spawner.gd" id="1_gf22x"]
+[ext_resource type="Script" uid="uid://bxt5duhck23xe" path="res://Scripts/Game/bubble_spawner.gd" id="1_gf22x"]
 [ext_resource type="PackedScene" uid="uid://buqe7sesqtmvk" path="res://Scenes/Game/Bubble.tscn" id="2_h0jft"]
 [ext_resource type="PackedScene" uid="uid://cd54jswke45g2" path="res://Scenes/Game/Dart Gun/DartGun.tscn" id="3_8gxow"]
 [ext_resource type="PackedScene" uid="uid://bjwlr1aewf03t" path="res://Scenes/Game/Dart Gun/Projectile.tscn" id="4_lehfy"]
-[ext_resource type="Script" path="res://Scripts/Game/playable_area_detector.gd" id="5_yg4l3"]
+[ext_resource type="Script" uid="uid://b36ho5gbs2ix7" path="res://Scripts/Game/playable_area_detector.gd" id="5_yg4l3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yqus1"]
 

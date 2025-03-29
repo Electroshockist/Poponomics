@@ -12,7 +12,7 @@ enum MARKETS {
 	WHEAT
 }
 
-var market_resources = {
+var market_resources: Dictionary[MARKETS, MarketResource] = {
 	MARKETS.APPLE: preload("res://Resources/Apple.tres"),
 	MARKETS.FISH: preload("res://Resources/Fish.tres"),
 	MARKETS.STEW: preload("res://Resources/Stew.tres"),
@@ -21,7 +21,6 @@ var market_resources = {
 
 signal points_updated
 signal market_updated(market: MARKETS)
-signal cart_updated
 signal round_ended
 
 @onready var timer: Timer = Timer.new()
@@ -50,14 +49,16 @@ func _ready():
 	round_ended.connect(_on_round_end)
 
 	points = points
-	round_started()
+	
+	## Setup Timer
+	add_child(timer)
+	timer.timeout.connect(end_round)
+	timer.one_shot = true
+
 	for i in market_resources:
 		round_ended.connect(market_resources[i]._on_new_round)
 
 func round_started():
-	timer.timeout.connect(end_round)
-	timer.one_shot = true
-	add_child(timer)
 	timer.start(round_time_sec)
 	
 

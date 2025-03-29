@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bkv7dcd7rdmfp"]
 
 [ext_resource type="LabelSettings" uid="uid://erayclptbayt" path="res://Resources/SmallText.tres" id="1_tgacm"]
-[ext_resource type="Script" path="res://Scripts/UI/points_value.gd" id="2_157q2"]
+[ext_resource type="Script" uid="uid://bct6va23s5lbt" path="res://Scripts/UI/points_value.gd" id="2_157q2"]
 
 [node name="Points" type="HBoxContainer"]
 size_flags_horizontal = 8

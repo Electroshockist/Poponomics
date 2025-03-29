@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://b0gqsddxmj08u"]
 
-[ext_resource type="Script" path="res://Scripts/UI/market_list_element.gd" id="1_72g62"]
+[ext_resource type="Script" uid="uid://bd80vfy1o0ggn" path="res://Scripts/UI/market_list_element.gd" id="1_72g62"]
 [ext_resource type="Texture2D" uid="uid://f4ltylwq775o" path="res://Assets/Art/kenney_voxel-pack/PNG/Items/apple.png" id="2_5v1wt"]
 
 [node name="Market List Element" type="HBoxContainer"]

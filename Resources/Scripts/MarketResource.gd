@@ -12,8 +12,9 @@ func _on_new_round():
     total_per_round = 0
 
 func get_max_affordable(budget: float) -> int:
-    # Get the lowest round number that the user can affoerd
+    # Get the lowest round number that the user can afford
     var max_affordable := floori(budget / (price as float))
 
-    # Make sure they can't buy more than are in supply
-    return max_affordable if max_affordable < quantity else quantity
+    # Make sure they can't buy more than are in supply 
+    var val = min(max_affordable, quantity)
+    return val

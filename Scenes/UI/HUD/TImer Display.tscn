@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bma3kyp3s3f5o"]
 
-[ext_resource type="Script" path="res://Scripts/UI/timer_display.gd" id="1_pfc5p"]
+[ext_resource type="Script" uid="uid://l6886x8maucl" path="res://Scripts/UI/timer_display.gd" id="1_pfc5p"]
 [ext_resource type="LabelSettings" uid="uid://erayclptbayt" path="res://Resources/SmallText.tres" id="2_2bkyk"]
 
 [node name="Time remaining" type="HBoxContainer"]

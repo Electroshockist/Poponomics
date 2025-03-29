@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://ducv6x0s5y333"]
 
-[ext_resource type="Script" path="res://Scripts/UI/main_menu.gd" id="1_j04wt"]
+[ext_resource type="Script" uid="uid://c5x23lpf20v0n" path="res://Scripts/UI/main_menu.gd" id="1_j04wt"]
 [ext_resource type="Texture2D" uid="uid://x6kplbi873sa" path="res://Assets/Art/Free-Horizontal-Game-Backgrounds/PNG/game_background_1/game_background_1.png" id="2_edp3r"]
 [ext_resource type="FontFile" uid="uid://ch60ip0j3cl2k" path="res://Assets/Fonts/Pacifico/Pacifico-Regular.ttf" id="3_s4q05"]
 [ext_resource type="Texture2D" uid="uid://d28qqbsva80lk" path="res://Assets/Art/kenney_ui-pack/PNG/Green/Double/button_rectangle_depth_gradient.png" id="4_kwpxi"]

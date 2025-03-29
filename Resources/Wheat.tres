@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="MarketResource" load_steps=3 format=3 uid="uid://o52eoj64g8kd"]
 
 [ext_resource type="Texture2D" uid="uid://bhvuwlu785dt4" path="res://Assets/Art/kenney_voxel-pack/PNG/Items/wheat.png" id="1_hsbpa"]
-[ext_resource type="Script" path="res://Resources/Scripts/MarketResource.gd" id="2_5y1k8"]
+[ext_resource type="Script" uid="uid://f7ewwnnun3ws" path="res://Resources/Scripts/MarketResource.gd" id="2_5y1k8"]
 
 [resource]
 script = ExtResource("2_5y1k8")

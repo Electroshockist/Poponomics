@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bjwlr1aewf03t"]
 
-[ext_resource type="Script" path="res://Scripts/Game/projectile.gd" id="1_woaq5"]
+[ext_resource type="Script" uid="uid://7r2h7yy1b54h" path="res://Scripts/Game/projectile.gd" id="1_woaq5"]
 [ext_resource type="Texture2D" uid="uid://h2yph87pge76" path="res://Assets/Art/kenney_scribble-dungeons/PNG/Double (128px)/Items/weapon_pole.png" id="2_5gyhp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gsex2"]

@@ -25,6 +25,8 @@ signal round_ended
 
 @onready var timer: Timer = Timer.new()
 
+var shop: Shop
+
 var points: int = 0:
 	get:
 		return points

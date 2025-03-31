@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bk78rcp0u368e"]
+[gd_scene load_steps=4 format=3 uid="uid://bk78rcp0u368e"]
 
 [ext_resource type="Script" uid="uid://yvn21ycs5c3o" path="res://Scripts/UI/shop_ui.gd" id="2_gbgot"]
 [ext_resource type="Texture2D" uid="uid://f4ltylwq775o" path="res://Assets/Art/kenney_voxel-pack/PNG/Items/apple.png" id="2_ovwlh"]
+[ext_resource type="PackedScene" uid="uid://2gsigwkwhyfv" path="res://Scenes/UI/spin_box.tscn" id="3_8rrl6"]
 
 [node name="Shop UI" type="HBoxContainer"]
 offset_right = 124.0
@@ -30,7 +31,11 @@ text = "{Price}"
 [node name="VSeparator" type="VSeparator" parent="."]
 layout_mode = 2
 
-[node name="SpinBox" type="SpinBox" parent="."]
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_right = 50
+
+[node name="SpinBox" parent="MarginContainer" instance=ExtResource("3_8rrl6")]
 layout_mode = 2
 size_flags_horizontal = 3
 
@@ -39,4 +44,4 @@ layout_mode = 2
 size_flags_horizontal = 3
 text = "{Subtotal}"
 
-[connection signal="value_changed" from="SpinBox" to="." method="_on_spin_box_value_changed"]
+[connection signal="on_value_changed" from="MarginContainer/SpinBox" to="." method="_on_spin_box_value_changed"]

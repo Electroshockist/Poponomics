@@ -2,7 +2,7 @@ extends Control
 
 class_name Shop
 
-@onready var remaining_buget := GameManager.points
+@onready var remaining_buget := 15 # GameManager.points
 
 # @export var price: Label
 
@@ -11,9 +11,15 @@ class_name Shop
 @export var shops: Dictionary[GameManager.MARKETS, Shop_UI]
 
 # signal update_shops(market: GameManager.MARKETS)
-
 func _ready():
-	pass
+	GameManager.shop = self
+	
+	GameManager.market_resources[2].price = 3
+
+	for m in shops:
+		shops[m].update_text()
+		shops[m].update_max()
+
 #     for shop_path in shop_paths:
 #         var s: Shop_UI = get_node(shop_path)
 #         _shops.append(s)
@@ -42,16 +48,18 @@ func _ready():
 #     MenuManager.load_scene(MenuManager.SCENE.GAME)
 #     GameManager.round_started()
 func _on_shop_ui_spinbox_updated(value: float, market: GameManager.MARKETS) -> void:
-	for m in shops:
-		var shop := shops[m]
-		shop.update_text(remaining_buget)
-		
-		# Update budget
-		var dif := shop.spinbox.value - shop.oldspinboxval
-		remaining_buget -= dif as int * shop.market_resource.price
+	var shop := shops[market]
 
+	var dif := value - shop.oldspinboxval
+
+	# Update budget
+	remaining_buget -= dif as int * shop.market_resource.price
+	shop.update_text()
+
+	for m in shops:
 		if m != market:
-			shop.update_max(remaining_buget)
+			shop = shops[m]
+			shop.update_max()
 
 
 #     # _on_cart_updated()

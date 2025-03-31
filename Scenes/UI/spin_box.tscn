@@ -1,0 +1,29 @@
+[gd_scene load_steps=2 format=3 uid="uid://2gsigwkwhyfv"]
+
+[ext_resource type="Script" uid="uid://spnlsnmmqxh3" path="res://Scripts/UI/TempSpinbox.gd" id="1_8flu4"]
+
+[node name="SpinBox" type="HBoxContainer"]
+script = ExtResource("1_8flu4")
+_value = 0
+
+[node name="ValueLabel" type="Label" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "{Value}"
+
+[node name="Buttons" type="VBoxContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="Up" type="Button" parent="Buttons"]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "/\\"
+
+[node name="Down" type="Button" parent="Buttons"]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "\\/"
+
+[connection signal="button_up" from="Buttons/Up" to="." method="_on_up_button_up"]
+[connection signal="button_up" from="Buttons/Down" to="." method="_on_down_button_up"]

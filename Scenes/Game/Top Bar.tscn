@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bvnffi2oda30p"]
 
-[ext_resource type="PackedScene" uid="uid://bma3kyp3s3f5o" path="res://Scenes/UI/HUD/TImer Display.tscn" id="1_2wic5"]
+[ext_resource type="PackedScene" uid="uid://bma3kyp3s3f5o" path="res://Scenes/UI/HUD/Timer Display.tscn" id="1_2wic5"]
 [ext_resource type="PackedScene" uid="uid://bkv7dcd7rdmfp" path="res://Scenes/UI/HUD/Points.tscn" id="2_aj0oq"]
 
 [node name="Top Bar" type="Control"]

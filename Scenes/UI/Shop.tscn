@@ -1,11 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://bompuo7v3onx4"]
+[gd_scene load_steps=8 format=3 uid="uid://bompuo7v3onx4"]
 
 [ext_resource type="Script" uid="uid://0d8iv6njsr65" path="res://Scripts/UI/shop.gd" id="1_lmqty"]
 [ext_resource type="Texture2D" uid="uid://bwg0htvh3elt0" path="res://Assets/Art/Free-Horizontal-Game-Backgrounds/PNG/game_background_4/game_background_4.png" id="2_kpmof"]
 [ext_resource type="PackedScene" uid="uid://bk78rcp0u368e" path="res://Scenes/UI/Shop_UI.tscn" id="3_8acf6"]
 [ext_resource type="PackedScene" uid="uid://bkv7dcd7rdmfp" path="res://Scenes/UI/HUD/Points.tscn" id="3_mll3b"]
 [ext_resource type="LabelSettings" uid="uid://erayclptbayt" path="res://Resources/SmallText.tres" id="3_q1a1w"]
-[ext_resource type="Script" uid="uid://35ljik181mpk" path="res://Scripts/UI/total.gd" id="6_dvb3k"]
 [ext_resource type="LabelSettings" uid="uid://d3b8ptiuciqtj" path="res://Resources/LabelSettings.tres" id="6_virxc"]
 [ext_resource type="Texture2D" uid="uid://d28qqbsva80lk" path="res://Assets/Art/kenney_ui-pack/PNG/Green/Double/button_rectangle_depth_gradient.png" id="8_y0g0n"]
 
@@ -80,12 +79,12 @@ text = "Price per Unit"
 [node name="Control" type="Control" parent="MarginContainer/List/Header"]
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_vertical = 4
 
 [node name="Buy" type="Label" parent="MarginContainer/List/Header"]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "Buy
-"
+text = "Buy"
 
 [node name="Label" type="Label" parent="MarginContainer/List/Header"]
 layout_mode = 2
@@ -110,7 +109,6 @@ market = 3
 [node name="Total" type="HBoxContainer" parent="MarginContainer/List"]
 layout_mode = 2
 size_flags_vertical = 8
-script = ExtResource("6_dvb3k")
 
 [node name="Total" type="Label" parent="MarginContainer/List/Total"]
 layout_mode = 2

@@ -4,64 +4,47 @@ class_name Shop
 
 @onready var remaining_buget := 15 # GameManager.points
 
-# @export var price: Label
+@onready var price: Label = $"MarginContainer/List/Total/Total Cost"
 
-# @export var supply: Label
+@onready var supply: Label = $MarginContainer/List/Total/Supply
 
 @export var shops: Dictionary[GameManager.MARKETS, Shop_UI]
 
 # signal update_shops(market: GameManager.MARKETS)
 func _ready():
 	GameManager.shop = self
-	
-	GameManager.market_resources[2].price = 3
 
-	for m in shops:
-		shops[m].update_text()
-		shops[m].update_max()
+	update_totals(0, null)
 
-#     for shop_path in shop_paths:
-#         var s: Shop_UI = get_node(shop_path)
-#         _shops.append(s)
-# # func _on_cart_updated():
-# #     remaining_buget = GameManager.points
-# #     var price_sum := 0
-# #     var quantity_sum := 0
-# #     for s in _shops:
-# #         var market_resource: MarketResource = s.market_resource
-# #         var spinbox: SpinBox = s.spinbox
-# #         remaining_buget -= spinbox.value as int * market_resource.price
-# #         price_sum += market_resource.price * spinbox.value as int
-# #         quantity_sum += market_resource.quantity
-# #     price.text = GameManager.price_string.format({"price": price_sum})
-# #     supply.text = "%s" % quantity_sum
-# func _on_buy_pressed() -> void:
-#     var quantity_sum = 0
-#     for s in _shops:
-#         var market_resource: MarketResource = s.market_resource
-#         var spinbox: SpinBox = s.spinbox
-#         GameManager.points -= spinbox.value as int * market_resource.price
-#         market_resource.quantity -= spinbox.value as int
-#         quantity_sum += market_resource.quantity
-#     if quantity_sum == 0:
-#         MenuManager.load_scene(MenuManager.SCENE.WIN)
-#     MenuManager.load_scene(MenuManager.SCENE.GAME)
-#     GameManager.round_started()
 func _on_shop_ui_spinbox_updated(value: float, market: GameManager.MARKETS) -> void:
-	var shop := shops[market]
+	update_totals(value, market)
 
-	var dif := value - shop.oldspinboxval
 
-	# Update budget
-	remaining_buget -= dif as int * shop.market_resource.price
-	shop.update_text()
+func update_totals(value: float, market):
+	var shop: Shop_UI
+	if market != null:
+		shop = shops[market]
 
+		var dif := value - shop.oldspinboxval
+
+		# Update budget
+		remaining_buget -= dif as int * shop.market_resource.price
+		shop.update_text()
+	
+	var supply_total: int = 0
+	var price_total: int = 0
 	for m in shops:
-		if m != market:
-			shop = shops[m]
+		shop = shops[m]
+
+		## do not update the max of the spinbox that triggered
+		if market != null and m != market:
+			shop.update_max()
+		else:
 			shop.update_max()
 
+		var mr := shop.market_resource
+		supply_total += mr.quantity - shop.spinbox.value
+		price_total += mr.price * shop.spinbox.value
 
-#     # _on_cart_updated()
-#     update_shops.emit(market)
-#     # TODO: Update Totals
+	supply.text = "%s" % supply_total
+	price.text = "Total: %s" % GameManager.price_string.format({"price": price_total})

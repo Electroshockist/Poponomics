@@ -1,7 +1,7 @@
 extends Node
 
 const round_cap := 2
-const round_time_sec := 10 # 120
+const round_time_sec := 120
 
 const price_string = "{price} pts"
 

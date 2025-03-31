@@ -2,7 +2,7 @@ extends Control
 
 class_name Shop
 
-@onready var remaining_buget := 15 # GameManager.points
+@onready var remaining_buget := GameManager.points
 
 @onready var price: Label = $"MarginContainer/List/Total/Total Cost"
 
@@ -48,3 +48,24 @@ func update_totals(value: float, market):
 
 	supply.text = "%s" % supply_total
 	price.text = "Total: %s" % GameManager.price_string.format({"price": price_total})
+
+
+func _on_buy_pressed() -> void:
+	var quantity_sum = 0
+
+	for m in shops:
+		var shop := shops[m]
+		
+		var market_resource: MarketResource = shop.market_resource
+		var spinbox := shop.spinbox
+
+		GameManager.points -= spinbox.value as int * market_resource.price
+
+		market_resource.quantity -= spinbox.value as int
+		quantity_sum += market_resource.quantity
+
+	if quantity_sum == 0:
+		MenuManager.load_scene(MenuManager.SCENE.WIN)
+
+	MenuManager.load_scene(MenuManager.SCENE.GAME)
+	GameManager.round_started()

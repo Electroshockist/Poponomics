@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://c8eif26c8r6np"]
+[gd_scene load_steps=5 format=3 uid="uid://c8eif26c8r6np"]
 
 [ext_resource type="Texture2D" uid="uid://bwg0htvh3elt0" path="res://Assets/Art/Free-Horizontal-Game-Backgrounds/PNG/game_background_4/game_background_4.png" id="1_rjcjl"]
+[ext_resource type="LabelSettings" uid="uid://erayclptbayt" path="res://Resources/SmallText.tres" id="2_iikph"]
+[ext_resource type="PackedScene" uid="uid://dp6b2n8gn8np1" path="res://Scenes/UI/Back Button.tscn" id="3_wnc0r"]
+[ext_resource type="PackedScene" uid="uid://ducv6x0s5y333" path="res://Scenes/UI/Menus/Main Menu.tscn" id="4_6nb2h"]
 
 [node name="Credits" type="Control"]
 layout_mode = 3
@@ -19,3 +22,28 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_rjcjl")
 expand_mode = 1
+
+[node name="RichTextLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Made by:
+Eric Balas - Programming, Game Development and Game Design
+Krupal Vaghela - UX, Game Design and Copywriting
+Diksha Sharma -UX, Game Design and Copywriting
+
+"
+label_settings = ExtResource("2_iikph")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Back" parent="." instance=ExtResource("3_wnc0r")]
+layout_mode = 1
+offset_left = 500.0
+offset_top = 506.0
+offset_right = -499.0
+offset_bottom = -56.0
+prev_scene = ExtResource("4_6nb2h")
